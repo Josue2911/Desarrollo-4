@@ -1,0 +1,29 @@
+h3{
+    font-family: "Lucida Handwriting", cursive;
+}
+body{
+    background-color: #f6834f;
+}
+img{
+    width: 300px;
+    height: 400px;
+    border-radius: 50%;
+}
+.contenido{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.DOC{
+    background-color: bisque;
+    color: black;
+}
+.cabeza{
+    font-family: "Lucida Handwriting", cursive;
+    text-align: center;
+}
+.tituloCU{
+    font-size: xx-large;
+    text-align: left;
+}
+.desc{
+    text-align: justify;
+}

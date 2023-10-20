@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Laboratorio 7 JavaScript</title>
+    <link rel="stylesheet" href="lab7.css">
+</head>
+<body onload="obtenerDatos()">
+
+    <header>
+        <div class="Encabezado-titulo">
+            <h1>Laboratorio #7</h1>
+            <h4>Uso de JavaScript</h4>
+            <span>Grupo GL122-L</span>
+            <span>Odeth Arevalo</span>
+            <span>Gerardo Vásquez</span>
+            <span>Josué Camargo</span>
+        </div>
+        <div class="Encabezado-info">
+            <p>
+                Cree un sitio HTML de una sola sección, con una tabla de 3x11
+                1.	Cada celda debe contener un ejemplo de una función confeccionada de js.
+                    1.1.	Cambiar el color de párrafo (uso de style)
+                    1.2.	Añadir texto a un párrafo (uso de operadores)
+                    1.3.	Concatenar el valor de dos textos (uso de operadores)
+                    1.4.	Eliminar valores de una lista despegable (uso de atributos de etiqueta)
+                    1.5.	Un botón que me lleve a un video de youtube (con js) (uso de href en js)
+                    1.6.	Mandar un mensaje al usuario con el nombre colocado en el punto 1.3 (uso de alert)
+                    1.7.	Manda el nombre, a la consola de js del navegador (uso de console)
+                    1.8.	Un check, e imprimir su estado (uso de atributos del checkbox)
+                    1.9.	Un radio e imprimir su estado (uso de atributos del radiobutton)
+                    1.10.	 Una validación de un campo, si este es numero enviar un mensaje que solo se permiten teclas. (investigar con que función se hace)
+
+                Como ultimo punto, busque un API público y mapee al menos 3 datos dentro de la tabla. 
+
+            </p>
+        </div>
+    </header>
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>Descripción del ejemplo</th>
+                <th>Ejemplo</th>
+                <th>Botón para activar el ejemplo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Cambiar el color de párrafo</td>
+                <td>
+                    <p id="celda_1.1">
+                        Trikitrakatelas
+                    </p>
+                </td>
+                <td>
+                    <button onclick="cambiar_color()">Cambiar Color</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Añadir texto a un párrafo
+                </td>
+                <td>
+                    <p id="celda_1.2">
+                        Hola.
+                    </p>
+                </td>
+                <td>
+                    <button onclick="añadir_texto()">Añadir texto</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Concatenar el valor de dos textos
+                </td>
+                <td>
+                    <p id="p1">Quiero tomarme</p>
+                    <p id="p2">un buen cafecito</p>
+                    <p id="concatenacion"></p>
+                </td>
+                <td>
+                    <button onclick="concatenarText()">Concatenar textos</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Eliminar valores de una lista desplegable
+                </td>
+                <td>
+                    <form action="#">
+                        <label>Países</label>
+                        <select id="paises">
+                            <option value="pais1">Panamá</option>
+                            <option value="pais2">Colombia</option>
+                            <option value="pais3">Japón</option>
+                            <option value="pais4">China</option>
+                            <option value="pais5">Nigeria</option>
+                            <option value="pais6">Turquía</option>
+                        </select>
+                    </form>
+                </td>
+                <td>
+                    <button onclick="eleminarElemento()">Eliminar un elemento</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Un botón que lleva a un sitio de youtube
+                </td>
+                <td>
+                    <p>Video de youtube: Sky: The Two Embers - Official Teaser Trailer | gamescom 2023</p>
+                </td>
+                <td>
+                    <button onclick="enlaceVideo()">Ir a video</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mandar un mensaje al usuario con el nombre colocado en el punto 1.3
+                </td>
+                <td>
+                    <p>Texto colocado en la 1.3: <span id="texto-mostrar">Quiero tomarme un buen cafecito</span> </p>
+                </td>
+                <td>
+                    <button onclick="mensajeAlert()">Mostrar mensaje</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Manda el nombre, a la consola de js del navegador
+                </td>
+                <td>
+                    <p id="celda_1.7">
+                        ¿Qué quiere el pueblo? La copa america
+                    </p>
+                </td>
+                <td>
+                    <button onclick="mostrarDeseo()">Mostrar Ejemplo en Consola</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Un check e imprimir su estado
+                </td>
+                <td>
+                    <input type="checkbox" id="celda_1.8" name="celda_1.8">
+                    <br>
+                    <p >Estado: <span id="resultado"></span></p>
+                </td>
+                <td>
+                    <button onclick="print_estado()">Mostrar estado del check</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Un radio e imprimir su estado
+                </td>
+                <td class="radio">
+                    <h2>¿Como te sientes?</h2>
+                    <p>
+                    <input type="radio" id="Bien" name="opcion" value="Opcion 1 seleccionada">
+                    <label for="Bien">Bien</label><br>
+                    
+                    <input type="radio" id="Pasable" name="opcion" value="Opcion 2 seleccionada">
+                    <label for="Pasable">Pasable</label><br>
+                    
+                    <input type="radio" id="Cafe" name="opcion" value="Opcion 3 seleccionada">
+                    <label for="Cafe">Un cafecito y pa'lante</label><br>
+                    
+                    <input type="radio" id="Mal" name="opcion" value="Opcion 4 seleccionada">
+                    <label for="Mal">Mal... quiero mimir</label><br> 
+                    </p>
+                    <p>Opcion seleccionada: <span id="opcionSeleccionada"></span></p>
+
+                </td>
+                <td>
+                    <button onclick="radio_estado()">Mostrar estado del radio</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Una validación de un campo, si este es numero enviar un mensaje que solo se permiten teclas.
+                </td>
+                <td>
+                    <label for="solo-letras">Ingrese su nombre: </label>
+                    <input type="text" id="solo-letras">
+                
+                </td>
+                <td>
+                    <button onclick="validarCampo()">Validar campo</button>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Nombre Pokemon
+                </th>
+                <th>
+                    Imagen Pokemon
+                </th>
+                <th>
+                    Tipo Pokemon
+                </th>
+            </tr>
+            <tr id="contenedor-poke">
+
+            </tr>
+        </tbody>
+    </table>
+    
+    <footer>
+        <div class="logo-utp">
+            <img src="img/logo_utp-rgb_2022.png" alt="">
+        </div>
+        <div class="logo-fisc">
+            <img src="img/fisc.png" alt="">
+        </div>
+        <p>
+            Laboratorio 7 realizado por Odeth Arevalo, Gerardo Vásquez y Josue Camargo
+        </p>
+    </footer>
+    <script src="funciones.js"></script>
+</body>
+</html>
